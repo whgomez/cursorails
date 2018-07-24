@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Identificacion:</strong>
+  <%= @tercero.identificacion %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @tercero.nombre %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @tercero.telefono %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @tercero.correo %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @tercero.direccion %>
+</p>
+
+<p>
+  <strong>Ciudad:</strong>
+  <%= @tercero.city.try(:nnombreciudad) %>
+</p>
+<%= link_to 'Edit', edit_tercero_path(@tercero) %> |
+<%= link_to 'Back', terceros_path %>

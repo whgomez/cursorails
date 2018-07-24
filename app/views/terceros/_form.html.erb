@@ -1,0 +1,110 @@
+<%= form_with(model: tercero, local: true) do |form| %>
+  <% if tercero.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tercero.errors.count, "error") %> prohibited this tercero from being saved:</h2>
+      <ul>
+        <% tercero.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row">
+  <div class="col-1">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text col-sm-16" id="inputGroup-sizing-default">Identificacion</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-11">
+    <div class="field">
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+      <%= form.text_field :identificacion, id: :tercero_identificacion %>
+   </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-1">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text col-sm-16" id="inputGroup-sizing-default">Nombre</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-11">
+    <div class="field">
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+      <%= form.text_field :nombre, id: :tercero_nombre %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-1">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text col-sm-16" id="inputGroup-sizing-default">Telefono      </span>
+      </div>
+    </div>
+  </div>
+  <div class="col-11">
+    <div class="field">
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+      <%= form.text_field :telefono, id: :tercero_telefono %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-1">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text col-sm-16" id="inputGroup-sizing-default">Correo        </span>
+      </div>
+    </div>
+  </div>
+  <div class="col-11">
+    <div class="field">
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+      <%= form.text_field :correo, id: :tercero_correo %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-1">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text col-sm-16" id="inputGroup-sizing-default">Direccion</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-11">
+    <div class="field">
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+      <%= form.text_field :direccion, id: :tercero_direccion %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-1">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text col-sm-16" id="inputGroup-sizing-default">Ciudad</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-11">
+    <div class="field">
+      <%= form.collection_select :city, City.all, :id, :nombreciudad, { prompt: 'Seleccione ciudad'} %> 
+    </div>
+  </div>
+</div>
+
+  <div class="actions">
+    <button type="submit" class="btn btn-primary">Grabar Tercero</button>
+  </div>
+<% end %>

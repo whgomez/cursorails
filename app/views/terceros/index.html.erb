@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Terceros</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Identificacion</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Ciudad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @terceros.each do |tercero| %>
+    <tr>
+      <td><%= tercero.identificacion %></td>
+      <td><%= tercero.nombre %></td>
+      <td><%= tercero.telefono %></td>
+      <td><%= tercero.correo %></td>
+      <td><%= tercero.direccion %></td>
+      <td><%= tercero.city.try(:nombreciudad) %></td>
+      <td><%= link_to 'Mostrar', tercero %></td>
+      <td><%= link_to 'Editar', edit_tercero_path(tercero) %></td>
+      <td><%= link_to 'Eliminar', tercero, method: :delete, data: { confirm: 'Esta Seguro?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<h4><span class="badge badge-secondary"></span>
+<%= link_to 'Nuevo Tercero', new_tercero_path %>
+</h4>
+
